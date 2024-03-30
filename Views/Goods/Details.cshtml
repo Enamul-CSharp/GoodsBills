@@ -1,0 +1,39 @@
+﻿@model MVCExam.Models.Goods
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Goods</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GoodsName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GoodsName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GoodsImage)
+        </dt>
+        <dd class="col-sm-10">
+            <figure>
+                <img src="@Model.GoodsImage" width="100" />
+                <figcaption>@Model.GoodsName</figcaption>
+            </figure>
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.GoodsId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
